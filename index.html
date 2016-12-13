@@ -1,0 +1,15 @@
+<head>
+</head>
+<body>
+    <div id="vue_ins">
+      <input type="text" v-model="greeting">
+      <p>
+          {{greeting}}
+      </p>
+    </div>
+    <script src="bower_components/vue/dist/vue.js">
+    </script>
+    <script>
+        var vueInstance = new Vue({el:'#vue_ins',data:{greeting:'Hello world'}})
+    </script>
+</body>
