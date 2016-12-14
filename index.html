@@ -6,10 +6,11 @@
       <p>
           {{greeting}}
       </p>
+      <button v-on:click="sayHello">Say Hello</button>
     </div>
     <script src="bower_components/vue/dist/vue.js">
     </script>
     <script>
-        var vueInstance = new Vue({el:'#vue_ins',data:{greeting:'Hello world'}})
+        var vueInstance = new Vue({el:'#vue_ins',data:{greeting:'Hello world'},methods:{sayHello:()=>{alert("hello world")}}})
     </script>
 </body>
