@@ -7,10 +7,24 @@
           {{greeting}}
       </p>
       <button v-on:click="sayHello">Say Hello</button>
+      <div>
+          <div v-if="showTest">
+              This is a test div
+          </div>
+          <button @click = "toggleTest">{{toggleTestBtnText}} test div</button>
+    </div>
     </div>
     <script src="bower_components/vue/dist/vue.js">
     </script>
     <script>
-        var vueInstance = new Vue({el:'#vue_ins',data:{greeting:'Hello world'},methods:{sayHello:()=>{alert("hello world")}}})
+          var vueInstance = new Vue({el:'#vue_ins',data:{greeting:'Hello world',showTest:true,toggleTestBtnText:'Hide'},methods:{sayHello:()=>{alert("hello world")},toggleTest(){
+          this.showTest = !this.showTest
+          if(this.showTest) {
+              this.toggleTestBtnText =  "Hide"
+          }
+          else {
+            this.toggleTestBtnText = "Show"
+          }
+        }}})
     </script>
 </body>
