@@ -13,11 +13,15 @@
           </div>
           <button @click = "toggleTest">{{toggleTestBtnText}} test div</button>
     </div>
+    <div v-for="item in items">
+        <p>{{item.name}}    {{item.price}}</p>
+    </div>
     </div>
     <script src="bower_components/vue/dist/vue.js">
     </script>
     <script>
-          var vueInstance = new Vue({el:'#vue_ins',data:{greeting:'Hello world',showTest:true,toggleTestBtnText:'Hide'},methods:{sayHello:()=>{alert("hello world")},toggleTest(){
+          var items = [{name:'Cotton Candy',price:'Rs.20'},{name:'Clothes Hanger',price:'Rs.200'},{name:'Book Shelf',price:'Rs.2000'}]
+          var vueInstance = new Vue({el:'#vue_ins',data:{greeting:'Hello world',showTest:true,toggleTestBtnText:'Hide',items},methods:{sayHello:()=>{alert("hello world")},toggleTest(){
           this.showTest = !this.showTest
           if(this.showTest) {
               this.toggleTestBtnText =  "Hide"
